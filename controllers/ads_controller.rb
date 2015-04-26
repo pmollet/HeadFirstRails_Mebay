@@ -13,6 +13,14 @@ class AdsController < ApplicationController
   def show
     @ad = Ad.find(params[:id])
   end
+  def edit
+    @ad = Ad.find(params[:id])
+  end
+  def update
+    @ad = Ad.find(params[:id])
+    @ad.update_attributes ad_params
+    redirect_to "/ads/#{@ad.id}"
+  end
 
 private
 
